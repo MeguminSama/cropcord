@@ -1,4 +1,4 @@
-const { ChannelStore, MessageStore, PermissionStore } = Vencord.Webpack.Common;
+const { ChannelStore, PermissionStore } = Vencord.Webpack.Common;
 const MessageActions = Vencord.Webpack.findByProps("deleteMessage", "startEditMessage");
 
 let running = false;
@@ -32,7 +32,7 @@ async function deleteMessages(guilds) {
 					}
 
 					console.log("Deleting message", guildId, channelId, messageId);
-					await MessageStore.deleteMessage(channelId, messageId)
+					await MessageActions.deleteMessage(channelId, messageId)
 					success++
 				} catch (e) {
 					failed.push([guildId, channelId, messageId, e])

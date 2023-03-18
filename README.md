@@ -1,6 +1,6 @@
 # CropCord
 
-Following Google's amazing shitcode, cropped screenshots on Android devices may contain parts you didn't intend to be there...
+Following Google's [amazing shitcode](https://archive.ph/3bpoU), cropped screenshots on Android devices may contain parts you didn't intend to be there...
 
 This script checks your discord data package for these screenshots and will export them to a file `messages.json`
 
@@ -17,9 +17,13 @@ unzip your package.zip here and call the folder "package".
 
 ```
 pnpm i
+```
 
+```
 pnpm start
 ```
+
+If you want to download the assets (this takes much longer) you can run it as `pnpm start --download`
 
 This will create the messages.json
 

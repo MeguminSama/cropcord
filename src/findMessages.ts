@@ -8,6 +8,11 @@ const DOWNLOAD_DIR = path.resolve(__dirname, "..", "downloads");
 const PACKAGE_DIR = path.resolve(__dirname, "..", "package");
 const MESSAGE_DIR = path.resolve(PACKAGE_DIR, "messages");
 
+if (!fs.existsSync(MESSAGE_DIR)) {
+  console.error("No Discord export package found. Have you extracted it to project directory?");
+  process.exit(1);
+}
+
 const SCREENSHOT_REGEX =
   /https:\/\/cdn\.discordapp\.com\/attachments\/(\d+)\/(\d+)\/(Screenshot_\d+-\d+\.png)/g;
 
@@ -99,6 +104,8 @@ async function main() {
             await new Promise((resolve) => {
               file.on("finish", resolve);
             });
+
+            
           }
         }
       }
